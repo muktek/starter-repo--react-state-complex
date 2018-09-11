@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import SimpleUser from './SimpleUser--complete.js'
 
 const allUsersList = [
   { user: 'Tomas' , status: 'active'},
@@ -9,6 +10,8 @@ const allUsersList = [
   { user: 'Romina' , status: 'inactive'},
   { user: 'Daniela' , status: 'inactive'},
 ]
+
+
 
 class FilterableList extends Component {
   constructor(){
@@ -26,24 +29,10 @@ class FilterableList extends Component {
 
   _showList(uList){
     let jsxArray = uList.map(function(userObj){
-
-      let userClassValStatus
-      let statusText
-
-      if(userObj.status === 'active'){
-        statusText = 'ACTIVE'
-        userClassValStatus = 'status--active'
-      } else {
-        statusText = 'INACTIVE'
-        userClassValStatus = 'status--inactive'
-      }
-
-      return (
-        <div className={userClassValStatus}>
-          <span>{userObj.user}</span>
-          <span>{statusText}</span>
-        </div>
-      )
+      return <SimpleUser
+        user={userObj.user}
+        status={userObj.status}
+      />
     })
 
     return jsxArray
@@ -66,8 +55,8 @@ class FilterableList extends Component {
           </h4>
 
           <span onClick={ ()=>{this._handleClick('all') } }>All</span>
-          <span className="" onClick={ ()=>{this._handleClick('active') } }>Active</span>
-          <span className="" onClick={ ()=>{this._handleClick ('inactive')} }>Inactive</span>
+          <span onClick={ ()=>{this._handleClick('active') } }>Active</span>
+          <span onClick={ ()=>{this._handleClick ('inactive')} }>Inactive</span>
         </aside>
 
 
