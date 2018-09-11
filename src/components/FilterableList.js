@@ -28,7 +28,6 @@ class FilterableList extends Component {
 
     return (
       <main>
-        <h3>Filterable List</h3>
         <aside>
           <h4>
             Currently showing: <mark>{'all'}</mark>

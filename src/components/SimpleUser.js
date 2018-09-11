@@ -3,11 +3,20 @@ import React, { Component } from 'react';
 
 class SimpleUser extends Component {
   render() {
-    let renderedClassVal = 'status--active'
-    return (
+    let renderedClassVal
+    let statusText
+
+     if(this.props.status === 'active'){
+        statusText = 'ACTIVE'
+        renderedClassVal = 'status--active'
+     } else {
+        statusText = 'INACTIVE'
+        renderedClassVal = 'status--inactive'
+     }
+     return (
       <div className={renderedClassVal}>
-        <span>Some User</span>
-        <span>ACTIVE</span>
+        <span>{this.props.user}</span>
+        <span>{statusText}</span>
       </div>
     )
   }

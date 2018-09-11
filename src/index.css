@@ -54,6 +54,7 @@ mark {
 
 aside{
   padding: 20px;
+  text-align: left;
 }
 
 aside span{
@@ -69,6 +70,7 @@ section div{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid #ddd;
 }
 
 
